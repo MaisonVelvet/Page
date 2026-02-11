@@ -226,7 +226,23 @@ nav.scrolled {
 /* ============================================
    HERO SECTION
    ============================================ */
-
+.hero-tagline {
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--v-dark);
+    letter-spacing: 2px;
+    margin: clamp(15px, 3vw, 30px) auto;
+    max-width: 600px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    
+    /* Brillo rojo oscuro muy sutil */
+    text-shadow: 
+        0 0 4px rgba(94, 13, 36, 0.2);
+}
 .hero {
     min-height: 100vh;
     display: flex;
@@ -280,6 +296,8 @@ nav.scrolled {
     }
 }
 .hero-v {
+    margin-top: -70px;
+    margin-bottom: -50px;
     margin-left: clamp(20px, 50vw, 240px);
     font-family: var(--font-accent);
     font-size: clamp(2rem, 18vw, 22rem);
