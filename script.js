@@ -343,14 +343,6 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.transform = 'scale(1)';
     });
     
-    // ============================================
-    // LOGS DE CONSOLA (desarrollo)
-    // ============================================
-    
-    console.log('%cMaison Velvet', 'font-size: 24px; font-weight: bold; color: #D4AF37;');
-    console.log('%cComunicación Corporativa de Lujo', 'font-size: 14px; color: #8B7E74;');
-    console.log('Sitio web cargado correctamente ✓');
-    
 });
 
 // ============================================
@@ -380,26 +372,3 @@ document.addEventListener('touchend', function(event) {
     lastTouchEnd = now;
 }, false);
 
-// ============================================
-// EASTER EGG - Konami Code (opcional/divertido)
-// ============================================
-
-let konamiCode = [];
-const konamiPattern = [
-    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
-    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
-    'b', 'a'
-];
-
-document.addEventListener('keydown', function(e) {
-    konamiCode.push(e.key);
-    konamiCode = konamiCode.slice(-10);
-    
-    if (konamiCode.join('') === konamiPattern.join('')) {
-        document.body.style.animation = 'rainbow 2s linear infinite';
-        setTimeout(() => {
-            document.body.style.animation = '';
-        }, 5000);
-        console.log('%c✨ Konami Code Activated! ✨', 'font-size: 20px; color: gold;');
-    }
-});
