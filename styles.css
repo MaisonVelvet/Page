@@ -280,12 +280,12 @@ nav.scrolled {
     }
 }
 .hero-v {
-    margin-left: 240px;
+    margin-left: clamp(20px, 50vw, 240px);
     font-family: var(--font-accent);
-    font-size: clamp(9rem, 18vw, 22rem);
+    font-size: clamp(2rem, 18vw, 22rem);
     font-weight: 700;
     line-height: 0.85;
-    letter-spacing: -10px;
+    letter-spacing: clamp(-10px, -1vw, -2px);
     background: linear-gradient(
         180deg,
         var(--v-deepest) 0%,
@@ -298,7 +298,23 @@ nav.scrolled {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     filter: drop-shadow(0 4px 20px rgba(58, 6, 20, 0.15));
-    
+    word-break: break-word;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-v {
+        margin-left: clamp(15px, 4vw, 40px);
+        letter-spacing: clamp(-8px, -0.8vw, -2px);
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .hero-v {
+        margin-left: 10px;
+        letter-spacing: -4px;
+    }
 }
 
 @keyframes fadeInScale {
